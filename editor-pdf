@@ -1,0 +1,2 @@
+#!/bin/bash
+exec "$HOME/editor-pdf/venv/bin/python" "$HOME/editor-pdf/editor_pdf.py" "$@"
