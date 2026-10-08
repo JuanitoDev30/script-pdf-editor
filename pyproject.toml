@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "editor-pdf"
+dynamic = ["version"]
+description = "Edita PDF conservando la plantilla y el diseño original."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pymupdf>=1.24.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.gui-scripts]
+editor-pdf = "editor_pdf.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "editor_pdf.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
